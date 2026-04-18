@@ -6,7 +6,7 @@ import os
 # --- PAGE CONFIG ---
 st.set_page_config(
     page_title="Fake News Detector",
-    page_icon="ðŸ’°",
+    page_icon="💰",
     layout="centered"
 )
 
@@ -118,7 +118,7 @@ def clean_text(text):
 
 # --- APP LAYOUT ---
 def main():
-    st.title("ðŸ—žï¸ Fake News Detector")
+    st.title("📰 Fake News Detector")
     st.markdown("Enter a news article below to verify its authenticity using our trained SVM classifier.")
     
     tfidf, svm_model = load_models()
@@ -144,14 +144,14 @@ def main():
                 if prediction == 'FAKE':
                     st.markdown(f"""
                     <div class="result-container fake-result">
-                        <span class="status-badge">âš ï¸ POTENTIALLY FAKE</span>
+                        <span class="status-badge">⚠️ POTENTIALLY FAKE</span>
                         This article shows characteristics of misinformation. Proceed with caution.
                     </div>
                     """, unsafe_allow_html=True)
                 else:
                     st.markdown(f"""
                     <div class="result-container real-result">
-                        <span class="status-badge">âœ… LIKELY REAL</span>
+                        <span class="status-badge">✅ LIKELY REAL</span>
                         This article appears to be authentic based on its linguistic patterns.
                     </div>
                     """, unsafe_allow_html=True)
